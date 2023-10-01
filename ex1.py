@@ -1,14 +1,10 @@
-import random
+import itertools
 
-count = 0
-def simulator_dice1(n):
-    global count
-    for i in range(n):
-        die1 = random.randint(1,6)
-        die2 = random.randint(1,6)
-        if die1 % 2 == 0 and die2 %2 ==0:
-            count += 1
+A = {1,2,3,4,5}
+k = 3
 
-simulator_dice1(1000000)
-probability = count / 1000000
-print(probability)
+#a
+num_3_digit =  list(itertools.permutations(A,k))
+num_length = len(num_3_digit)
+print("Number of the num_3_digit: ",num_length)
+print("List of the numbers: ", num_3_digit)
